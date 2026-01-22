@@ -78,7 +78,7 @@ Forgot your temporary password? Select option 2 from the menu to extract it from
 
 ### Checking Status
 
-Option 3 displays your container's current state, uptime, and active port mappings—helpful for quick troubleshooting.
+Option 3 displays your container's current state, uptime, and active port mappings- helpful for quick troubleshooting.
 
 ### Removing qBittorrent
 
@@ -249,7 +249,7 @@ Removing the container never touches these directories unless you explicitly cho
 
 ### Auto-start Behavior
 
-Docker's `--restart unless-stopped` flag handles automatic startup on boot—no additional configuration needed.
+Docker's `--restart unless-stopped` flag handles automatic startup on boot- no additional configuration needed.
 
 ## Frequently Asked Questions
 
@@ -277,7 +277,7 @@ The easiest approach is to use option 4 (Remove), then reinstall with new ports.
 
 ## Contributing
 
-Found a bug or have an idea? Open an issue or submit a pull request on [GitHub](https://github.com/MaDTiA/Q-bitdeploy). Q-bitdeploy prioritizes simplicity—feature requests should align with that philosophy.
+Found a bug or have an idea? Open an issue or submit a pull request on [GitHub](https://github.com/MaDTiA/Q-bitdeploy). Q-bitdeploy prioritizes simplicity- feature requests should align with that philosophy.
 
 ## License
 
