@@ -41,15 +41,13 @@ Or download first, then execute:
 
 Q-bitdeploy presents a straightforward menu:
 
-============================================================
-Q-bitdeploy - qBittorrent Docker Manager
-============================================================
 
-1) Install qBittorrent
-2) Show WebUI Password
-3) Show Status
-4) Remove qBittorrent
-5) Exit
+`Q-bitdeploy - qBittorrent Docker Manager`
+`1) Install qBittorrent`
+`2) Show WebUI Password`
+`3) Show Status`
+`4) Remove qBittorrent`
+`5) Exit`
 
 
 ### Installing qBittorrent
@@ -240,17 +238,6 @@ Temporary passwords appear only on the first container start. If you don't see o
 ## Understanding File Structure
 
 Your data persists outside the container in your chosen storage path:
-
-`
-<storage_path>/
-├── config/          # qBittorrent settings and state
-│   ├── qBittorrent.conf
-│   └── ...
-└── downloads/       # Your torrents
-    ├── completed/
-    └── incomplete/
-`
-
 Removing the container never touches these directories unless you explicitly choose to delete them.
 
 ## Security Best Practices
