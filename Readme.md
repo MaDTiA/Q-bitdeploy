@@ -1,6 +1,6 @@
 # Q-bitdeploy
 
-Deploy qBittorrent in Docker with confidence. Q-bitdeploy handles the entire setup process on Debian/Ubuntu systems, from Docker installation to container configuration. No unnecessary complexity—just clean, reliable automation for server environments.
+Deploy qBittorrent in Docker with confidence. Q-bitdeploy handles the entire setup process on Debian/Ubuntu systems, from Docker installation to container configuration. No unnecessary complexity- just clean, reliable automation for server environments.
 
 ## What It Does
 
@@ -12,7 +12,7 @@ Q-bitdeploy automates your qBittorrent Docker deployment from start to finish. W
 - **Configurable Ports**: Set custom WebUI and torrent ports to match your network setup
 - **Credential Management**: Generate temporary passwords automatically or set permanent credentials during installation
 - **Password Recovery**: Retrieve temporary passwords anytime from container logs
-- **Selective Removal**: Remove components individually or clean up everything—your choice
+- **Selective Removal**: Remove components individually or clean up everything- your choice
 - **Status Monitoring**: Quick health checks for your container
 - **Zero Dependencies**: Built with Python 3 standard library only
 - **Production Ready**: Designed for headless servers and automated deployments
