@@ -33,9 +33,9 @@ wget https://raw.githubusercontent.com/MaDTiA/Q-bitdeploy/main/qbitdeploy.py && 
 
 Or download first, then execute:
 
-wget https://raw.githubusercontent.com/MaDTiA/Q-bitdeploy/main/qbitdeploy.py
-chmod +x qbitdeploy.py
-sudo python3 qbitdeploy.py
+`wget https://raw.githubusercontent.com/MaDTiA/Q-bitdeploy/main/qbitdeploy.py`
+`chmod +x qbitdeploy.py`
+`sudo python3 qbitdeploy.py`
 
 ## How It Works
 
@@ -135,14 +135,14 @@ Access at: `http://localhost:3000`
 
 You can automate Q-bitdeploy by piping responses:
 
-echo -e "1\n2\n8443\n6881\n2\nadmin\nsecurepass\nEurope/Rome\n" | sudo python3 qbitdeploy.py
+`echo -e "1\n2\n8443\n6881\n2\nadmin\nsecurepass\nEurope/Rome\n" | sudo python3 qbitdeploy.py`
 
 
 ### Understanding the Docker Command
 
 Q-bitdeploy generates commands equivalent to:
 
-docker run -d \
+`docker run -d \
   --name=qbittorrent \
   -e PUID=1000 \
   -e PGID=1000 \
@@ -154,7 +154,7 @@ docker run -d \
   -v /path/to/config:/config \
   -v /path/to/downloads:/downloads \
   --restart unless-stopped \
-  linuxserver/qbittorrent
+  linuxserver/qbittorrent`
 
 
 ### Manual Password Retrieval
@@ -171,8 +171,8 @@ docker logs qbittorrent 2>&1 | grep -i "temporary password"
 
 **Solution**: Choose a different port during installation, or identify and stop the conflicting service:
 
-sudo lsof -i :2096  # Find what's using the port
-sudo docker stop qbittorrent  # Stop existing container
+`sudo lsof -i :2096  # Find what's using the port`
+`sudo docker stop qbittorrent  # Stop existing container`
 
 ### Permission Denied on /storage
 
@@ -180,15 +180,15 @@ sudo docker stop qbittorrent  # Stop existing container
 
 **Solution**: Create the directory and set proper permissions:
 
-sudo mkdir -p /storage
-sudo chown $USER:$USER /storage
+`sudo mkdir -p /storage`
+`sudo chown $USER:$USER /storage`
 
 
 ### Container Won't Start
 
 First, check the logs:
 
-docker logs qbittorrent
+`docker logs qbittorrent`
 
 
 Common causes:
@@ -200,9 +200,9 @@ Common causes:
 
 Ensure Docker is running:
 
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo systemctl status docker
+`sudo systemctl enable docker`
+`sudo systemctl start docker`
+`sudo systemctl status docker`
 
 
 ### No Password in Logs
@@ -218,30 +218,30 @@ Temporary passwords appear only on the first container start. If you don't see o
 
 ### Basic Controls
 
-docker stop qbittorrent     # Stop the container
-docker start qbittorrent    # Start it back up
-docker restart qbittorrent  # Restart
+`docker stop qbittorrent`   # Stop the container
+`docker start qbittorrent`  # Start it back up
+`docker restart qbittorrent`  # Restart
 
 ### Container Shell Access
 
-docker exec -it qbittorrent bash
+`docker exec -it qbittorrent bash`
 
 ### Live Log Monitoring
 
-docker logs -f qbittorrent
+`docker logs -f qbittorrent`
 
 ### Updating to Latest Version
 
-docker stop qbittorrent
-docker rm qbittorrent
-docker pull linuxserver/qbittorrent:latest
+`docker stop qbittorrent`
+`docker rm qbittorrent`
+`docker pull linuxserver/qbittorrent:latest`
 # Re-run Q-bitdeploy (your config and downloads remain intact)
 
 ## Understanding File Structure
 
 Your data persists outside the container in your chosen storage path:
 
-
+`
 <storage_path>/
 ├── config/          # qBittorrent settings and state
 │   ├── qBittorrent.conf
@@ -249,7 +249,7 @@ Your data persists outside the container in your chosen storage path:
 └── downloads/       # Your torrents
     ├── completed/
     └── incomplete/
-
+`
 
 Removing the container never touches these directories unless you explicitly choose to delete them.
 
@@ -260,30 +260,6 @@ Removing the container never touches these directories unless you explicitly cho
 3. **Use Reverse Proxy**: Add HTTPS with nginx or Caddy for remote access
 4. **VPN Integration**: Route traffic through a VPN container for privacy
 
-### Restricting Network Access
-
-Allow WebUI access only from your local network:
-
-sudo ufw allow from 192.168.1.0/24 to any port 2096
-
-
-## Integration Options
-
-### Nginx Reverse Proxy
-
-
-server {
-    listen 80;
-    server_name torrent.yourdomain.com;
-
-    location / {
-        proxy_pass http://localhost:2096;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
-
-
 ### Auto-start Behavior
 
 Docker's `--restart unless-stopped` flag handles automatic startup on boot—no additional configuration needed.
@@ -293,13 +269,13 @@ Docker's `--restart unless-stopped` flag handles automatic startup on boot—no 
 **Can I run multiple instances?**  
 Yes. Use different container names and ports for each instance:
 
-docker run -d --name=qbittorrent-movies -e WEBUI_PORT=2096 -p 2096:2096 ...
-docker run -d --name=qbittorrent-tv -e WEBUI_PORT=2097 -p 2097:2097 ...
+`docker run -d --name=qbittorrent-movies -e WEBUI_PORT=2096 -p 2096:2096 ...`
+`docker run -d --name=qbittorrent-tv -e WEBUI_PORT=2097 -p 2097:2097 ...`
 
 
 **How do I back up my configuration?**  
 Archive the config directory:
-tar -czf qbittorrent-backup-$(date +%F).tar.gz /path/to/config/
+`tar -czf qbittorrent-backup-$(date +%F).tar.gz /path/to/config/`
 
 
 **Does this work on Raspberry Pi?**  
