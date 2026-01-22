@@ -1,6 +1,6 @@
 # Q-bitdeploy
 
-Deploy qBittorrent in Docker with confidence. Q-bitdeploy handles the entire setup process on Debian/Ubuntu systems, from Docker installation to container configuration. No unnecessary complexity- just clean, reliable automation for server environments.
+Deploy qBittorrent in Docker with confidence. Q-bitdeploy handles the entire setup process on Debian/Ubuntu systems, from Docker installation to container configuration. No unnecessary complexity, just clean, reliable automation for server environments.
 
 ## What It Does
 
