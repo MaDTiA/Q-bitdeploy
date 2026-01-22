@@ -28,7 +28,7 @@ Q-bitdeploy automates your qBittorrent Docker deployment from start to finish. W
 
 Download and run Q-bitdeploy in one command:
 
-wget https://raw.githubusercontent.com/MaDTiA/Q-bitdeploy/main/qbitdeploy.py && chmod +x qbitdeploy.py && sudo python3 qbitdeploy.py
+`wget https://raw.githubusercontent.com/MaDTiA/Q-bitdeploy/main/qbitdeploy.py && chmod +x qbitdeploy.py && sudo python3 qbitdeploy.py`
 
 
 Or download first, then execute:
