@@ -41,13 +41,12 @@ Or download first, then execute:
 
 Q-bitdeploy presents a straightforward menu:
 
-
-`Q-bitdeploy - qBittorrent Docker Manager`
-`1) Install qBittorrent`
-`2) Show WebUI Password`
-`3) Show Status`
-`4) Remove qBittorrent`
-`5) Exit`
+Q-bitdeploy - qBittorrent Docker Manager
+1) Install qBittorrent
+2) Show WebUI Password
+3) Show Status
+4) Remove qBittorrent
+5) Exit
 
 
 ### Installing qBittorrent
